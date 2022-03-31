@@ -1,0 +1,30 @@
+{
+  "symbol": "A symbol",
+  "description": "Some description",
+  "seller_fee_basis_points": 1000,
+  "attributes": [],
+  "properties": {
+    "creators": [
+      {
+        "address": "Bpspdoapsdoapsoidpiaospdiapsoidpsaoidposiapd",
+        "share": 25
+      },
+      {
+        "address": "Cpspdoapsdoapsoidpiaospdiapsoidpsaoidposiapd",
+        "share": 25
+      },
+      {
+        "address": "Dpspdoapsdoapsoidpiaospdiapsoidpsaoidposiapd",
+        "share": 25
+      },
+      {
+        "address": "Fpspdoapsdoapsoidpiaospdiapsoidpsaoidposiapd",
+        "share": 25
+      }
+    ]
+  },
+  "collection": {
+    "name": "SMArt Commemoratives",
+    "family": "SMArt Commemoratives Family"
+  }
+}

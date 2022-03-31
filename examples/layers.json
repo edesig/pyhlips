@@ -1,0 +1,38 @@
+{
+  "layers": [
+    {
+      "id": 1,
+      "variants": [
+	{
+          "name": "a",
+	  "path": "...",
+	  "occurence": "3"
+
+	},
+	{
+          "name": "b",
+	  "path": "...",
+	  "occurence": "3"
+
+	}	
+      ]
+    },
+    {
+      "id": 2,
+      "variants": [
+	{
+          "name": "c",
+	  "path": "...",
+	  "occurence": "3"
+
+	},
+	{
+          "name": "d",
+	  "path": "...",
+	  "occurence": "3"
+
+	}	
+      ]
+    }
+  ]
+}

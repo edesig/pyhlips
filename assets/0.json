@@ -1,0 +1,47 @@
+{
+  "name": "Test #0",
+  "symbol": "A symbol",
+  "description": "Some description",
+  "seller_fee_basis_points": 1000,
+  "image": "0.png",
+  "attributes": [
+    {
+      "trait_type": "Layer-1",
+      "value": "a"
+    },
+    {
+      "trait_type": "Layer-2",
+      "value": "d"
+    }
+  ],
+  "properties": {
+    "creators": [
+      {
+        "address": "Bpspdoapsdoapsoidpiaospdiapsoidpsaoidposiapd",
+        "share": 25
+      },
+      {
+        "address": "Cpspdoapsdoapsoidpiaospdiapsoidpsaoidposiapd",
+        "share": 25
+      },
+      {
+        "address": "Dpspdoapsdoapsoidpiaospdiapsoidpsaoidposiapd",
+        "share": 25
+      },
+      {
+        "address": "Fpspdoapsdoapsoidpiaospdiapsoidpsaoidposiapd",
+        "share": 25
+      }
+    ],
+    "files": [
+      {
+        "uri": "0.png",
+        "type": "image/png"
+      }
+    ]
+  },
+  "collection": {
+    "name": "SMArt Commemoratives",
+    "family": "SMArt Commemoratives Family"
+  }
+}

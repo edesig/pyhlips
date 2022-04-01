@@ -13,7 +13,7 @@ def create_metadata(
         Attribute(trait_type=layer_name, value=layer.name)
         for layer_name, layer in layers.items()
     ]
-    name = f"{name} #{number}"
+    name = f"{name} #{number+1}"
     file_name = f"{number}.png"
     file = File(uri=file_name)
     metadata = Metadata.create_from_template(

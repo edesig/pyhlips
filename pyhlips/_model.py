@@ -9,10 +9,12 @@ class LayerVariant(BaseModel):
     name: str
     path: str
     occurence: int
+    priority: int
 
 
 class Layer(BaseModel):
     id: int
+    name: str
     variants: List[LayerVariant]
 
 
@@ -77,7 +79,6 @@ class Metadata(BaseModel):
     ):
         if not properties:
             properties = template.properties
-        print(template.attributes)
         if not template.attributes:
             template.attributes = []
         attributes = template.attributes + attributes

@@ -1,4 +1,5 @@
 from PIL import Image
+from typing import List
 
 def white2transparent(img):
     img = img.convert("RGBA") 
@@ -12,9 +13,13 @@ def white2transparent(img):
     img.putdata(newData)
     return img
 
-def add(img1, img2, out_file):
-    background = white2transparent(Image.open(img1))
-    foreground = white2transparent(Image.open(img2))
+def add_layer(background, foreground):
+    return background
 
-    background.paste(foreground, (0, 0), foreground)
-    background.save(out_file, optimize=True)
+def merge(images:List[str], outfile:str)
+    result = Image.open(images.pop(0))
+    for image in images:
+        image = Image.open(image)
+        result.paste(image, (0, 0), image)
+    result.save.(out_file, optimize=True)
+

@@ -2,34 +2,40 @@
   "layers": [
     {
       "id": 1,
+      "name": "background",
       "variants": [
 	{
           "name": "a",
 	  "path": "...",
-	  "occurence": "3"
+	  "occurence": 3,
+	  "priority": 1
 
 	},
 	{
           "name": "b",
 	  "path": "...",
-	  "occurence": "3"
+	  "occurence": 3,
+	  "priority": 1
 
 	}	
       ]
     },
     {
       "id": 2,
+      "name": "foreground",
       "variants": [
 	{
           "name": "c",
 	  "path": "...",
-	  "occurence": "3"
+	  "occurence": "3",
+	  "priority": 1
 
 	},
 	{
           "name": "d",
 	  "path": "...",
-	  "occurence": "3"
+	  "occurence": "3",
+	  "priority": 2
 
 	}	
       ]

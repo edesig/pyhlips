@@ -3,8 +3,7 @@ from ._random import shuffle_layers
 from ._creator import create_metadata
 
 
-
-metadata_template_json = "examples/metadata_template.json" 
+metadata_template_json = "examples/metadata_template.json"
 layers_json = "examples/layers.json"
 name = "Test"
 
@@ -14,5 +13,3 @@ if __name__ == "__main__":
     shuffled = shuffle_layers(layers)
     for i, item in enumerate(shuffled):
         create_metadata(metadata_template, item, name, i)
-
-

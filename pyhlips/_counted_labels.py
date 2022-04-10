@@ -197,7 +197,7 @@ class Problem_B:
                     items[j].append(i)
                 bound_places = free_places
                 free_places = set(range(self.s)) - bound_places
-            chosen = random.sample(free_places, rest)
+            chosen = random.sample(list(free_places), rest)
             free_places -= set(chosen)
             free_places |= bound_places
             for j in chosen:

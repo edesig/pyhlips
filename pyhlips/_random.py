@@ -1,20 +1,22 @@
 import random
-from typing import Optional
-from ._model import Layers, Layer
+from typing import Dict, List, Optional
+
+from ._model import Layer, Layers
 
 random.seed()
 
 
-def shuffle_layer(layer: Layer, size: int):
+def shuffle_layer(layer: Layer, size: Optional[int] = None):
     instances = []
     for variant in layer.variants:
         instances += [variant] * variant.occurence
-    instances += [None] * (size - len(instances))
+    if size != None:
+        instances += [None] * (size - len(instances))
     random.shuffle(instances)
     return instances
 
 
-def shuffle_layers(layers: Layers, size: Optional[int] = None):
+def deal(layers: Layers, size: Optional[int] = None) -> List[Dict[str, List]]:
     n = len(layers.layers)
     size = (
         size
@@ -31,5 +33,5 @@ def shuffle_layers(layers: Layers, size: Optional[int] = None):
             for layer in range(n)
             if shuffled_layers[layer][item]
         }
-        for item in range(len(shuffled_layers[0]))
+        for item in range(size)
     ]

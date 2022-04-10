@@ -1,5 +1,5 @@
 from ._model import Layers, MetadataTemplate, Metadata
-from ._random import shuffle_layers
+from ._random import deal
 from ._creator import create_metadata
 
 
@@ -10,6 +10,6 @@ name = "Test"
 if __name__ == "__main__":
     metadata_template = MetadataTemplate.parse_file(metadata_template_json)
     layers = Layers.parse_file(layers_json)
-    shuffled = shuffle_layers(layers)
+    shuffled = deal(layers)
     for i, item in enumerate(shuffled):
         create_metadata(metadata_template, item, name, i)

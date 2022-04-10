@@ -9,7 +9,7 @@ class LayerVariant(BaseModel):
     name: str
     path: str
     occurence: int
-    priority: int
+    priority: float
 
 
 class Layer(BaseModel):
@@ -95,3 +95,11 @@ class Metadata(BaseModel):
             properties=properties,
             collection=template.collection,
         )
+
+class RecipeItem(BaseModel):
+    item_id : int
+    layers: List[LayerVariant]
+
+class Recipe(BaseModel):
+    metadata_template: MetadataTemplate
+    items: List[RecipeItem]

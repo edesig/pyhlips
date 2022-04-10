@@ -9,9 +9,7 @@ p_layer = re.compile(r"(?P<name>.*) (?P<priority>\d+)")
 
 
 def get_layer(path: str):
-    print(path)
     path = path.rstrip(os.path.sep)
-    print(os.path.basename(path))
     layer_name, priority = p_layer.match(os.path.basename(path)).groups()
     variants = []
     for variant in os.listdir(path):

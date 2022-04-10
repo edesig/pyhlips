@@ -63,7 +63,7 @@ class Problem_A:
 
     @cached_property
     def _G(self):
-        d = self.n ** 2
+        d = self.n**2
         return spmatrix(
             tuple([1] * d + [-1] * d),
             tuple(range(2 * d)),
@@ -72,18 +72,18 @@ class Problem_A:
 
     @cached_property
     def _h(self):
-        d = self.n ** 2
+        d = self.n**2
         return matrix(
             tuple(tuple([s_i for s_i in self.s] * self.n) + (0,) * d), tc="d"
         )
 
     @cached_property
     def _c(self):
-        return matrix((1,) * self.n ** 2)
+        return matrix((1,) * self.n**2)
 
     @cached_property
     def _x(self):
-        d = self.n ** 2
+        d = self.n**2
         x = ilp(
             c=self._c,
             G=self._G,
@@ -126,7 +126,7 @@ class Problem_A:
     def get_a_solution(self) -> List[List[int]]:
         X = matrix(self._X)
         random.seed()
-        for _ in range((self.n ** 5) * 100):
+        for _ in range((self.n**5) * 100):
             self._shuffle(X)
         if not self.check(X):
             raise ValueError("Incorrect solution produced")
@@ -135,7 +135,7 @@ class Problem_A:
     def get_a_transposed_solution(self) -> List[List[int]]:
         X = matrix(self._X)
         random.seed()
-        for _ in range((self.n ** 5) * 100):
+        for _ in range((self.n**5) * 100):
             self._shuffle(X)
         if not self.check(X):
             raise ValueError("Incorrect solution produced")

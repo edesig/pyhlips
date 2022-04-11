@@ -49,6 +49,7 @@ class Properties(BaseModel):
 
 
 class MetadataTemplate(BaseModel):
+    name: str = ""
     symbol: str = ""
     description: str = ""
     seller_fee_basis_points: int

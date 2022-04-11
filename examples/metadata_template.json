@@ -1,4 +1,5 @@
 {
+  "name": "Sample collection",
   "symbol": "A symbol",
   "description": "Some description",
   "seller_fee_basis_points": 1000,

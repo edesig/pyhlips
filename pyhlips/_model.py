@@ -7,6 +7,7 @@ from pydantic import BaseModel
 
 class LayerVariant(BaseModel):
     name: str
+    layer: str
     path: str
     occurence: int
     priority: float

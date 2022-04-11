@@ -15,5 +15,5 @@ def create_recipe(
         items = deal(layers)
     return Recipe(
         metadata_template=metadata_template,
-        layers=[RecipeItem(item_id=i, layers=layers) for i, layers in enumerate(items)],
+        items=[RecipeItem(item_id=i, layers=list(layers.values())) for i, layers in enumerate(items)],
     )

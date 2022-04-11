@@ -45,7 +45,7 @@ def deal_with_layer_number_distribution(layers: Layers, distribution: List[int])
     mandatory_layers = [layer.name for layer in layers.layers if _layer_size(layer) >= size]
     prelabeled = create_labeling(optional_layers, distribution[1:])
     labeled = [item + mandatory_layers for item in prelabeled]
-    shuffled_layers = {layer.name: shuffle_layer(layer) for layer in layers}
+    shuffled_layers = {layer.name: shuffle_layer(layer) for layer in layers.layers}
     deck = [{layer: shuffled_layers[layer].pop() for layer in item} for item in labeled]
     random.shuffle(deck)
     return deck

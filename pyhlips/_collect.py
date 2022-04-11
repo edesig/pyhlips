@@ -21,7 +21,7 @@ def get_layer(path: str):
             variants.append(
                 LayerVariant(
                     name=m["name"],
-                    layer=layer_name
+                    layer=layer_name,
                     path=image_path,
                     occurence=m["occurence"],
                     priority=priority,

@@ -24,4 +24,4 @@ def merge(images: List[str], outfile: str):
     for image in images:
         image = Image.open(image)
         result.paste(image, (0, 0), image)
-    result.save(out_file, optimize=True)
+    result.save(outfile, optimize=True)

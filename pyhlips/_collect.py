@@ -17,7 +17,9 @@ def get_layer(path: str):
         if os.path.isfile:
             m = p_layervariant.match(variant)
             if not m:
-                raise ValueError(f"{variant} isn't meeting with our expectations")
+                raise ValueError(
+                    f"{variant} isn't meeting with our expectations"
+                )
             variants.append(
                 LayerVariant(
                     name=m["name"],

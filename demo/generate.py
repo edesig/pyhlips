@@ -8,6 +8,7 @@ import numpy as np
 from PIL import Image
 
 from pyhlips._collect import get_layers
+from pyhlips._csv import export_recipe
 from pyhlips._model import MetadataTemplate
 from pyhlips._recipe import create_collection, create_recipe
 
@@ -66,7 +67,10 @@ def generate_layers():
     }
     os.path.exists("Background 0") or os.mkdir("Background 0")
     factory.create_rectangle(
-        (72, 72, 72), (0, 0), (200, 200), os.path.join("Background 0", "gray 24.png")
+        (72, 72, 72),
+        (0, 0),
+        (200, 200),
+        os.path.join("Background 0", "gray 24.png"),
     )
     for layer, coords in layers.items():
         os.path.exists(layer) or os.mkdir(layer)
@@ -74,7 +78,9 @@ def generate_layers():
         remaining = occurence - len(colors)
         for name, color in colors.items():
             amount = random.randint(0, remaining)
-            remaining -= amount # TODO: it may happen, that we don't use all occurence
+            remaining -= (
+                amount  # TODO: it may happen, that we don't use all occurence
+            )
             factory.create_rectangle(
                 color,
                 coords[0],
@@ -94,7 +100,9 @@ def collect_layers():
 def prepare_recipe(layers):
     os.chdir(WORK_DIR)
     recipe = create_recipe(
-        MetadataTemplate.parse_file(METADATA_TEMPLATE), layers, [0, 0, 3, 5, 11, 5]
+        MetadataTemplate.parse_file(METADATA_TEMPLATE),
+        layers,
+        [0, 0, 3, 5, 11, 5],
     )
     with open("recipe.json", "w") as recipe_json:
         recipe_json.write(recipe.json(indent=2))
@@ -106,3 +114,4 @@ if __name__ == "__main__":
     layers = collect_layers()
     recipe = prepare_recipe(layers)
     create_collection(recipe)
+    export_recipe(recipe)

@@ -35,7 +35,10 @@ def create_recipe(
 def create_image(recipe: RecipeItem, out_dir: str = "assets"):
     out_file = os.path.join(out_dir, f"{recipe.item_id}.png")
     merge(
-        [layer.path for layer in sorted(recipe.layers, key=lambda x: x.priority)],
+        [
+            layer.path
+            for layer in sorted(recipe.layers, key=lambda x: x.priority)
+        ],
         out_file,
     )
 
@@ -44,7 +47,8 @@ def create_metadata(
     template: MetadataTemplate, recipe: RecipeItem, out_dir: str = "assets"
 ):
     attributes = [
-        Attribute(trait_type=layer.layer, value=layer.name) for layer in recipe.layers
+        Attribute(trait_type=layer.layer, value=layer.name)
+        for layer in recipe.layers
     ]
     name = f"{template.name} #{recipe.item_id+1}"
     file_name = f"{recipe.item_id}.png"

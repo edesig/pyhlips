@@ -4,7 +4,7 @@ import json
 
 
 def test_deal():
-    with open("examples/layers.json") as f:
+    with open("tests/layers.json") as f:
         layers = Layers.parse_raw(f.read())
 
     shuffled = deal(layers)

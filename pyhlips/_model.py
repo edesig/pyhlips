@@ -98,9 +98,11 @@ class Metadata(BaseModel):
             collection=template.collection,
         )
 
+
 class RecipeItem(BaseModel):
-    item_id : int
+    item_id: int
     layers: List[LayerVariant]
+
 
 class Recipe(BaseModel):
     metadata_template: MetadataTemplate

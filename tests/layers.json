@@ -1,0 +1,48 @@
+{
+  "layers": [
+    {
+      "id": 1,
+      "name": "background",
+      "variants": [
+	{
+          "name": "a",
+	  "path": "...",
+	  "layer": "background",
+	  "occurence": 3,
+	  "priority": 1
+
+	},
+	{
+          "name": "b",
+	  "layer": "background",
+	  "path": "...",
+	  "occurence": 3,
+	  "priority": 1
+
+	}	
+      ]
+    },
+    {
+      "id": 2,
+      "name": "foreground",
+      "variants": [
+	{
+          "name": "c",
+	  "layer": "foreground",
+	  "path": "...",
+	  "occurence": "3",
+	  "priority": 1
+
+	},
+	{
+          "name": "d",
+	  "layer": "foreground",
+	  "path": "...",
+	  "occurence": "3",
+	  "priority": 2
+
+	}	
+      ]
+    }
+  ]
+}

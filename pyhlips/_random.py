@@ -1,4 +1,5 @@
 import random
+import logging
 from typing import Dict, List, Optional
 
 from ._model import Layer, Layers, LayerVariant
@@ -43,6 +44,7 @@ def deal_with_layer_number_distribution(layers: Layers, distribution: List[int])
         layer.name: _layer_size(layer) for layer in layers.layers if _layer_size(layer) < size
     }
     mandatory_layers = [layer.name for layer in layers.layers if _layer_size(layer) >= size]
+    logging.debug(f"optional_layers: {optional_layers}")
     prelabeled = create_labeling(optional_layers, distribution[1:])
     labeled = [item + mandatory_layers for item in prelabeled]
     shuffled_layers = {layer.name: shuffle_layer(layer) for layer in layers.layers}

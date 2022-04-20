@@ -102,6 +102,7 @@ class Metadata(BaseModel):
 class RecipeItem(BaseModel):
     item_id: int
     layers: List[LayerVariant]
+    extra_attributes: Optional[List[Attribute]] = []
 
 
 class Recipe(BaseModel):
